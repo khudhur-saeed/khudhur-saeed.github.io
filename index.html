@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khedr Mohammed — Security Analyst &amp; Backend Developer</title>
+  <meta name="description" content="Portfolio of Khedr Mohammed — Security Analyst &amp; Backend Developer specializing in secure backend systems, applied cryptography, threat analysis, and AI/RAG architectures.">
+  <meta name="theme-color" content="#121214">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Khedr Mohammed — Security Analyst &amp; Backend Developer">
+  <meta property="og:description" content="Security Analyst &amp; Backend Developer specializing in zero-knowledge cryptography, resilient backend architectures, threat analysis, and AI/RAG systems.">
+  <meta property="og:image" content="assets/user_photo.jpg">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Khedr Mohammed — Security Analyst &amp; Backend Developer">
+  <meta name="twitter:description" content="Security Analyst &amp; Backend Developer specializing in zero-knowledge cryptography, resilient backend architectures, threat analysis, and AI/RAG systems.">
+  <meta name="twitter:image" content="assets/user_photo.jpg">
+
+  <!-- Monochrome Theme Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4.9">
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+
+
+  <!-- =========================================================================
+       PullCord Physics-driven Ceiling Rope Switch (Theme Switcher)
+       Inspired by mortspace / FeralUI
+       ========================================================================= -->
+  <div class="pullcord" id="pullcord">
+    <div class="pullcord-inner pullcord-inner--drop">
+      <svg class="pullcord-svg" viewBox="0 0 64 340" width="64" height="340" aria-hidden="true">
+        <defs>
+          <linearGradient id="pc-knob" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#abaaad" />
+          </linearGradient>
+          <filter id="pc-knob-sh" x="-70%" y="-70%" width="240%" height="240%">
+            <feDropShadow dx="0" dy="1.4" stdDeviation="1.5" flood-color="rgba(0,0,0,0.35)" />
+          </filter>
+        </defs>
+        <!-- Dynamic Verlet rope path -->
+        <path class="pullcord-path" d="M 32.0 0.0 Q 32.0 11.0 32.0 22.0 L 32.0 176.0" />
+        <!-- Knob SVG visual group -->
+        <g class="pullcord-knob-group">
+          <g filter="url(#pc-knob-sh)">
+            <circle cx="32" cy="176" r="6.5" fill="url(#pc-knob)" stroke="rgba(0,0,0,0.15)" stroke-width="0.5" />
+          </g>
+        </g>
+      </svg>
+      <!-- Interactive grab & pull knob button for screen readers & touch/mouse interaction -->
+      <button type="button" class="pullcord-knob-btn" aria-label="Pull the cord to toggle theme" aria-pressed="false" title="Pull cord to toggle light/dark theme"></button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Main Content Area
+       ========================================================================= -->
+  <main class="main-content" id="mainContent">
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      
+      <!-- LetterGlitch Background (50% Opacity) -->
+      <div class="glitch-bg-container" id="glitchBg" aria-hidden="true">
+        <canvas class="glitch-bg-canvas" id="glitchCanvas"></canvas>
+        <div class="glitch-outer-vignette"></div>
+      </div>
+
+      <div class="hero-container">
+        
+        <!-- Combined Single Hero Element: Intro + Profile -->
+        <div class="hero-intro specular-card" id="heroIntro">
+          
+          <!-- Left: ProfileCard Component with Uploaded Photo -->
+          <div class="hero-profile">
+            <div class="pc-card-wrapper" id="profileCard">
+              <!-- Glow effect following pointer behind the card -->
+              <div class="pc-behind"></div>
+
+              <div class="pc-card-shell">
+                <section class="pc-card">
+                  <div class="pc-inside">
+                    
+                    <!-- Glass glare reflection -->
+                    <div class="pc-glare"></div>
+
+                    <!-- Avatar Image Content (1:1 Ratio Matched to Photo) -->
+                    <div class="pc-avatar-content">
+                      <img 
+                        class="avatar" 
+                        src="assets/user_photo.jpg" 
+                        alt="Khedr Portrait Photo" 
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
+                      />
+
+                      <!-- Frosted glass user details banner -->
+                      <div class="pc-user-info">
+                        <div class="pc-user-details">
+                          <div class="pc-mini-avatar">
+                            <img src="assets/user_photo.jpg" alt="Mini Avatar" loading="lazy" decoding="async" />
+                          </div>
+                          <div class="pc-user-text">
+                            <div class="pc-handle">@khedr</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Name & Welcome Message -->
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="status-pulse"></span>
+              <span>Available for new opportunities</span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="gradient-text">Khedr</span>
+            </h1>
+
+            <p class="hero-welcome">
+              Computer Engineering graduate candidate with a core dual focus in Secure Backend Development and Cybersecurity. Designing resilient server architectures, zero-knowledge systems, and proactive application security.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Post-Hero Sections (with Living Ambient Blurred Background)
+         ======================================================================= -->
+    <div class="post-hero-wrapper" id="postHeroWrapper">
+      <!-- Living Ambient Blurred Background Canvas (Subtle & GPU-Accelerated) -->
+      <div class="living-ambient-canvas" aria-hidden="true">
+        <canvas id="pixelArcCanvas" class="pixel-arc-canvas"></canvas>
+        <div class="ambient-fade-transition"></div>
+      </div>
+
+      <!-- =======================================================================
+           About Section: Magic UI Interactive Terminal
+           ======================================================================= -->
+      <section class="about-section" id="about">
+      <div class="parallax-container" id="aboutParallax">
+        
+        <!-- Background Layer: Ambient Glow (static) -->
+        <div class="parallax-layer" aria-hidden="true">
+          <div class="about-ambient-glow"></div>
+        </div>
+
+        <!-- Main Layer: Section Header + Magic UI Terminal -->
+        <div class="parallax-layer parallax-main-layer">
+          <div class="about-container">
+            
+            <!-- Section Header -->
+            <div class="section-header">
+              <div class="section-tag">
+                <span class="tag-icon">⌘</span>
+                <span>ABOUT KHEDR</span>
+              </div>
+              <h2 class="section-title">About Me</h2>
+            </div>
+
+            <!-- Magic UI Interactive Terminal Window -->
+            <div class="terminal-window specular-card" id="terminalWindow">
+              
+              <!-- Terminal Header Bar with Mac Dots & Quick Actions -->
+              <div class="terminal-header">
+                <div class="terminal-dots" aria-hidden="true">
+                  <span class="dot dot-close"></span>
+                  <span class="dot dot-minimize"></span>
+                  <span class="dot dot-expand"></span>
+                </div>
+                <div class="terminal-title">khedr@dev:~ (bash)</div>
+                <div class="terminal-actions">
+                  <button type="button" class="term-btn" id="termReplayBtn" title="Replay Animation" aria-label="Replay terminal typing animation">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                    <span>Replay</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Terminal Body Content -->
+              <div class="terminal-body" id="terminalBody">
+                
+                <!-- Command 1: whoami -->
+                <div class="terminal-block" id="termBlock1">
+                  <div class="terminal-prompt-line">
+                    <span class="prompt-user">khedr@dev</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+                    <span class="typed-command" id="cmdWhoami"></span>
+                  </div>
+                  <div class="terminal-output" id="outWhoami">
+                    <span class="output-prefix">&gt;</span> <span class="highlight-name">Khudhur Saeed</span> — Backend Engineer &amp; Application Security
+                  </div>
+                </div>
+
+                <!-- Command 2: cat about.txt -->
+                <div class="terminal-block term-hidden" id="termBlock2">
+                  <div class="terminal-prompt-line">
+                    <span class="prompt-user">khedr@dev</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+                    <span class="typed-command" id="cmdCat"></span>
+                  </div>
+                  <div class="terminal-output terminal-bio-text" id="outCat">
+                    <p>
+                      Computer Engineering graduate (Cumhuriyet University, GPA 3.26) with a core dual focus on 
+                      <span class="term-keyword">Backend Development</span> and <span class="term-keyword">Cybersecurity &amp; PenTesting</span>. 
+                      Experience gained through an intensive 15-week internship at <span class="term-highlight">SETA Software Technologies</span>, conducting web security audits (<span class="term-highlight">OWASP Top 10</span>, IDOR, SQLi, XSS), 
+                      network reconnaissance via <span class="term-code">Nmap</span>, exploitation with <span class="term-code">Metasploit</span>, Active Directory lateral movement, and Windows/Linux privilege escalation.
+                    </p>
+                    <p>
+                      Proficient in engineering secure, scalable backend architectures with 
+                      <span class="term-keyword">Python, Go (Golang), FastAPI, PostgreSQL, and Docker</span>, with deep practical experience in 
+                      <span class="term-highlight">Zero-Knowledge architectures</span>, authenticated cryptography (<span class="term-code">AES-256-GCM, Argon2id</span>), 
+                      and AI/RAG integrations with <span class="term-code">Google Gemini &amp; Chroma</span>. Targeting roles in Software Engineering, Application Security, and DevSecOps.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Command 3: echo $PASSION -->
+                <div class="terminal-block term-hidden" id="termBlock3">
+                  <div class="terminal-prompt-line">
+                    <span class="prompt-user">khedr@dev</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+                    <span class="typed-command" id="cmdEcho"></span>
+                  </div>
+                  <div class="terminal-output terminal-passion" id="outEcho">
+                    <span class="output-prefix">&gt;</span> <span class="passion-quote">"Designing resilient server architectures and building systems that are secure by default."</span>
+                  </div>
+                </div>
+
+                <!-- Active prompt with blinking cursor -->
+                <div class="terminal-prompt-line term-active-prompt term-hidden" id="termActivePrompt">
+                  <span class="prompt-user">khedr@dev</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+                  <span class="term-cursor" aria-hidden="true"></span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Technical Skills Section
+         ======================================================================= -->
+    <section class="skills-section" id="skills">
+
+      <div class="skills-container">
+        
+        <!-- Section Header -->
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="tag-icon">⚡</span>
+            <span>STACK</span>
+          </div>
+          <h2 class="section-title">Technical Skills</h2>
+        </div>
+
+        <!-- Modern Interactive Stack Component (Bento Grid) -->
+        <div class="stack-interactive-container" id="stackInteractiveContainer">
+          
+          <!-- Skills Bento Grid Architecture -->
+          <div class="skills-bento-grid" id="skillsBentoGrid">
+            
+            <!-- Category 1: Languages -->
+            <div class="skill-category-card specular-card" data-category="languages">
+              <div class="bento-card-header">
+                <div class="bento-cat-info">
+                  <span class="bento-cat-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  </span>
+                  <h3 class="bento-cat-title">Programming Languages</h3>
+                </div>
+                <span class="bento-cat-badge">3 skills</span>
+              </div>
+              <div class="bento-chips-wrap">
+                <span data-category="languages" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c5 0 5 3 5 3v2H7V5s0-3 5-3z"/><path d="M12 22c-5 0-5-3-5-3v-2h10v2s0 3-5 3z"/><path d="M5 9h14v6H5z"/><circle cx="9" cy="5" r="1" fill="currentColor"/><circle cx="15" cy="19" r="1" fill="currentColor"/></svg>
+                  Python
+                </span>
+                <span data-category="languages" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                  Go
+                </span>
+                <span data-category="languages" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19c2 1 6 1 8 0"/><path d="M7 16c2.5 1 5.5 1 8 0"/><path d="M11 2c2 3-2 5 0 8"/></svg>
+                  Java
+                </span>
+              </div>
+            </div>
+
+            <!-- Category 2: Backend & Systems -->
+            <div class="skill-category-card specular-card" data-category="backend">
+              <div class="bento-card-header">
+                <div class="bento-cat-info">
+                  <span class="bento-cat-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+                  </span>
+                  <h3 class="bento-cat-title">Backend &amp; Systems</h3>
+                </div>
+                <span class="bento-cat-badge">2 skills</span>
+              </div>
+              <div class="bento-chips-wrap">
+                <span data-category="backend" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  FastAPI
+                </span>
+                <span data-category="backend" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2a2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1m8 0h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
+                  RESTful APIs
+                </span>
+              </div>
+            </div>
+
+            <!-- Category 3: AI & LLM -->
+            <div class="skill-category-card specular-card" data-category="ai">
+              <div class="bento-card-header">
+                <div class="bento-cat-info">
+                  <span class="bento-cat-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+                  </span>
+                  <h3 class="bento-cat-title">AI &amp; LLM</h3>
+                </div>
+                <span class="bento-cat-badge">2 skills</span>
+              </div>
+              <div class="bento-chips-wrap">
+                <span data-category="ai" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68q.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58a12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68q-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96q2.19.93 3.81 2.55t2.55 3.81"/></svg>
+                  Google Gemini API
+                </span>
+                <span data-category="ai" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 12 2.84M21 5v3m0 4l-3 5h4l-3 5"/><path d="M3 12a9 3 0 0 0 11.59 2.87"/></svg>
+                  RAG Architectures
+                </span>
+              </div>
+            </div>
+
+            <!-- Category 4: Databases & Search (Bento Wide 2 Cols) -->
+            <div class="skill-category-card specular-card" data-category="databases">
+              <div class="bento-card-header">
+                <div class="bento-cat-info">
+                  <span class="bento-cat-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+                  </span>
+                  <h3 class="bento-cat-title">Databases &amp; Search Engines</h3>
+                </div>
+                <span class="bento-cat-badge">6 skills</span>
+              </div>
+              <div class="bento-chips-wrap">
+                <span data-category="databases" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/><path d="M12 12v7"/></svg>
+                  PostgreSQL
+                </span>
+                <span data-category="databases" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6a9 3 0 0 0 18 0V5"/><path d="M3 11v6a9 3 0 0 0 18 0v-6"/><path d="M3 17v2a9 3 0 0 0 18 0v-2"/></svg>
+                  SQL Server
+                </span>
+                <span data-category="databases" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  Elasticsearch
+                </span>
+                <span data-category="databases" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                  Chroma Vector DB
+                </span>
+                <span data-category="databases" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+                  SQLAlchemy (Async)
+                </span>
+                <span data-category="databases" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L4.54 19.34A2 2 0 0 0 6.27 22h11.46a2 2 0 0 0 1.73-2.66L14 9.31V2"/></svg>
+                  Alembic
+                </span>
+              </div>
+            </div>
+
+            <!-- Category 5: Cryptography & Security -->
+            <div class="skill-category-card specular-card" data-category="crypto">
+              <div class="bento-card-header">
+                <div class="bento-cat-info">
+                  <span class="bento-cat-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  </span>
+                  <h3 class="bento-cat-title">Applied Cryptography</h3>
+                </div>
+                <span class="bento-cat-badge">4 skills</span>
+              </div>
+              <div class="bento-chips-wrap">
+                <span data-category="crypto" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  AES-256-GCM
+                </span>
+                <span data-category="crypto" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0 3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                  Argon2id
+                </span>
+                <span data-category="crypto" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                  Zero-Knowledge Arch
+                </span>
+                <span data-category="crypto" class="stack-chip" title="Anti-Enumeration & Challenge-Response Auth">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="3"/><path d="M7 21a5 5 0 0 1 10 0"/></svg>
+                  Challenge-Response Auth
+                </span>
+              </div>
+            </div>
+
+            <!-- Category 6: Threat Analysis (Bento Wide 2 Cols) -->
+            <div class="skill-category-card specular-card" data-category="cybersecurity">
+              <div class="bento-card-header">
+                <div class="bento-cat-info">
+                  <span class="bento-cat-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </span>
+                  <h3 class="bento-cat-title">Threat Analysis &amp; Security</h3>
+                </div>
+                <span class="bento-cat-badge">6 skills</span>
+              </div>
+              <div class="bento-chips-wrap">
+                <span data-category="cybersecurity" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  OWASP Top 10
+                </span>
+                <span data-category="cybersecurity" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6Z"/></svg>
+                  Burp Suite
+                </span>
+                <span data-category="cybersecurity" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+                  Nmap
+                </span>
+                <span data-category="cybersecurity" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2l8 5v10l-8 5-8-5V7l8-5z"/><path d="M12 22V12"/><path d="m20 7-8 5-8-5"/></svg>
+                  Metasploit
+                </span>
+                <span data-category="cybersecurity" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="6" height="6" x="9" y="2" rx="1"/><rect width="6" height="6" x="2" y="16" rx="1"/><rect width="6" height="6" x="16" y="16" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 8v4"/></svg>
+                  Active Directory
+                </span>
+                <span data-category="cybersecurity" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/><polyline points="18 9 12 3 6 9"/></svg>
+                  Privilege Escalation
+                </span>
+              </div>
+            </div>
+
+            <!-- Category 7: DevOps & Tools -->
+            <div class="skill-category-card specular-card" data-category="devops">
+              <div class="bento-card-header">
+                <div class="bento-cat-info">
+                  <span class="bento-cat-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="2" y="2" rx="1"/><rect width="8" height="8" x="14" y="2" rx="1"/><rect width="8" height="8" x="14" y="14" rx="1"/><rect width="8" height="8" x="2" y="14" rx="1"/></svg>
+                  </span>
+                  <h3 class="bento-cat-title">DevOps &amp; Infrastructure</h3>
+                </div>
+                <span class="bento-cat-badge">5 skills</span>
+              </div>
+              <div class="bento-chips-wrap">
+                <span data-category="devops" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="4" height="4" x="4" y="8" rx="1"/><rect width="4" height="4" x="10" y="8" rx="1"/><rect width="4" height="4" x="16" y="8" rx="1"/><rect width="4" height="4" x="10" y="3" rx="1"/><path d="M2 14c2-1 4-1 6 0s4 1 6 0 4-1 6 0v2c-2 2-6 2-10 2s-8 0-8-4z"/></svg>
+                  Docker
+                </span>
+                <span data-category="devops" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                  Docker Compose
+                </span>
+                <span data-category="devops" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M6 9v12"/><path d="M9 6h6"/></svg>
+                  Git
+                </span>
+                <span data-category="devops" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  Linux
+                </span>
+                <span data-category="devops" class="stack-chip">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                  Bash Scripting
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Featured Projects Section (Stepped Timeline Feature Style)
+         ======================================================================= -->
+    <section class="projects-section" id="projects">
+
+      <div class="container projects-container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <div class="section-tag">
+            <span class="tag-icon">⚡</span>
+            <span>PROJECTS</span>
+          </div>
+          <h2 class="section-title">Featured Works</h2>
+        </div>
+
+        <!-- Projects Showcase Grid -->
+        <div class="projects-grid" id="projectsTimeline">
+          
+          <!-- Card 1: SecureBox -->
+          <div class="project-step-content specular-card" tabindex="0">
+            <h3 class="project-item-title">SecureBox: Zero-Knowledge Password Vault</h3>
+            
+            <!-- Cross-Fade Deck: Figure (Default) ⇄ Details (Hover) -->
+            <div class="project-card-deck">
+              <div class="project-figure-layer figure-cyan" id="figure-securebox" aria-hidden="true"></div>
+              <div class="project-details-layer">
+                <div class="project-tags-top">
+                  <span class="project-badge badge-cyan">Applied Cryptography</span>
+                  <span class="project-badge badge-ghost">Zero-Knowledge</span>
+                </div>
+                <p class="project-item-desc">
+                  End-to-end zero-knowledge password manager and vault powered by FastAPI and PostgreSQL. Implements Argon2id split-key derivation, authenticated AES-256-GCM encryption with cryptographic UUID Associated Data binding, challenge-response auth, and anti-enumeration defense.
+                </p>
+                <div class="project-chips-wrap">
+                  <div class="floating-chip"><span class="chip-dot"></span><code>FastAPI</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>PostgreSQL</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Argon2id</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>AES-256-GCM</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Docker</code></div>
+                </div>
+                <div class="project-action-wrap">
+                  <a href="https://github.com/khudhur-saeed/SecureBox" target="_blank" rel="noopener noreferrer" class="project-action-link" aria-label="View SecureBox on GitHub">
+                    <span>View on GitHub</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="action-icon-arrow"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Cross-Platform RMM & Endpoint Detection Platform (EDR) -->
+          <div class="project-step-content specular-card" tabindex="0">
+            <h3 class="project-item-title">Cross-Platform Remote Monitoring &amp; Endpoint Detection Platform (RMM / EDR)</h3>
+            
+            <!-- Cross-Fade Deck: Figure (Default) ⇄ Details (Hover) -->
+            <div class="project-card-deck">
+              <div class="project-figure-layer figure-cyan" id="figure-rmm-edr" aria-hidden="true"></div>
+              <div class="project-details-layer">
+                <div class="project-tags-top">
+                  <span class="project-badge badge-cyan">Endpoint Security &amp; C2</span>
+                  <span class="project-badge badge-ghost">RMM / EDR</span>
+                </div>
+                <p class="project-item-desc">
+                  Low-footprint Go agent for Linux &amp; Windows with native syscall telemetry, authenticated TLS WebSocket C2 with Redis state sync, Ed25519-signed remote task execution, SHA-256 File Integrity Monitoring (FIM), OS security log streaming, and an interactive PTY/ConPTY web terminal powered by FastAPI, PostgreSQL, and React.
+                </p>
+                <div class="project-chips-wrap">
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Go (Golang)</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>FastAPI</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>React</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>WebSockets</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>PostgreSQL</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Redis</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Docker</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Ed25519 &amp; SHA-256</code></div>
+                </div>
+                <div class="project-action-wrap">
+                  <a href="https://github.com/khudhur-saeed" target="_blank" rel="noopener noreferrer" class="project-action-link" aria-label="View RMM &amp; EDR Platform on GitHub">
+                    <span>View on GitHub</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="action-icon-arrow"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Moda AI Clothing Store -->
+          <div class="project-step-content specular-card" tabindex="0">
+            <h3 class="project-item-title">Moda: AI E-Commerce &amp; Virtual Try-On</h3>
+            
+            <!-- Cross-Fade Deck: Figure (Default) ⇄ Details (Hover) -->
+            <div class="project-card-deck">
+              <div class="project-figure-layer figure-purple" id="figure-moda" aria-hidden="true"></div>
+              <div class="project-details-layer">
+                <div class="project-tags-top">
+                  <span class="project-badge badge-purple">Full-Stack &amp; AI</span>
+                  <span class="project-badge badge-ghost">Virtual Try-On</span>
+                </div>
+                <p class="project-item-desc">
+                  Full-stack intelligent fashion retail platform engineered with FastAPI and React 18 + Vite. Deeply integrates Google Gemini AI for conversational styling assistance and photo-based virtual try-on, coupled with high-speed sub-80ms semantic product search powered by Elasticsearch.
+                </p>
+                <div class="project-chips-wrap">
+                  <div class="floating-chip"><span class="chip-dot"></span><code>FastAPI</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>React 18</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Gemini AI</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Elasticsearch</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>PostgreSQL</code></div>
+                </div>
+                <div class="project-action-wrap">
+                  <a href="https://github.com/khudhur-saeed/-clothing_store_V2_AI" target="_blank" rel="noopener noreferrer" class="project-action-link" aria-label="View Moda on GitHub">
+                    <span>View on GitHub</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="action-icon-arrow"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: PDF Chat -->
+          <div class="project-step-content specular-card" tabindex="0">
+            <h3 class="project-item-title">PDF Chat: Intelligent RAG Document Assistant</h3>
+            
+            <!-- Cross-Fade Deck: Figure (Default) ⇄ Details (Hover) -->
+            <div class="project-card-deck">
+              <div class="project-figure-layer figure-emerald" id="figure-pdfchat" aria-hidden="true"></div>
+              <div class="project-details-layer">
+                <div class="project-tags-top">
+                  <span class="project-badge badge-emerald">RAG &amp; Document AI</span>
+                  <span class="project-badge badge-ghost">Multi-Language</span>
+                </div>
+                <p class="project-item-desc">
+                  Production-ready retrieval-augmented generation (RAG) platform enabling intelligent multi-document conversations. Powered by LangChain, Google Gemini API, Chroma vector database, and Unstructured PDF text extraction with full RTL Arabic, English, and Turkish multi-language support.
+                </p>
+                <div class="project-chips-wrap">
+                  <div class="floating-chip"><span class="chip-dot"></span><code>FastAPI</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>LangChain</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Gemini API</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>Chroma DB</code></div>
+                  <div class="floating-chip"><span class="chip-dot"></span><code>React 18</code></div>
+                </div>
+                <div class="project-action-wrap">
+                  <a href="https://github.com/khudhur-saeed/pdf_chat" target="_blank" rel="noopener noreferrer" class="project-action-link" aria-label="View PDF Chat on GitHub">
+                    <span>View on GitHub</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="action-icon-arrow"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Get in Touch / Contact Section
+         ========================================================================= -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container specular-card">
+        
+        <!-- Left Side: Interactive Social Stack Chips -->
+        <div class="contact-right-col">
+          <div class="physics-stage-outer">
+            <div class="physics-header-hint">
+              <span class="hint-pulse"></span>
+              <span class="hint-text">Interactive Physics &bull; Drag &amp; toss chips</span>
+            </div>
+
+            <!-- Physics Interactive Canvas/Container -->
+            <div class="physics-stage-inner" id="physicsContainer" style="touch-action: none;">
+
+              <!-- GitHub Chip -->
+              <div data-stack-chip="true" data-href="https://github.com/khudhur-saeed" role="link" tabindex="0" aria-label="Open GitHub profile" class="physics-chip will-change-transform" style="transform: translate3d(40px, 90px, 0px) rotate(-0.15rad);">
+                <div class="chip-inner" style="background-color: #161618; color: #ffffff;">
+                  <span class="chip-icon-box" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#181717"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  </span>
+                  <span>GitHub</span>
+                </div>
+              </div>
+
+              <!-- Gmail Chip -->
+              <div data-stack-chip="true" data-href="mailto:khedrmosaid@gmail.com" role="link" tabindex="0" aria-label="Send email via Gmail" class="physics-chip will-change-transform" style="transform: translate3d(240px, 70px, 0px) rotate(0.12rad);">
+                <div class="chip-inner" style="background-color: #EA4335; color: #ffffff;">
+                  <span class="chip-icon-box" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M1.5 5.5v13a2 2 0 0 0 2 2h3.5v-10l-5.5-5z"/><path fill="#34A853" d="M17 10.5v10h3.5a2 2 0 0 0 2-2v-13l-5.5 5z"/><path fill="#EA4335" d="M12 13.5l5-4.5V4a1.5 1.5 0 0 0-2.3-1.3L12 5 9.3 2.7A1.5 1.5 0 0 0 7 4v5l5 4.5z"/><path fill="#FBBC05" d="M1.5 5.5l5.5 5V4L4.8 2.2A1.5 1.5 0 0 0 1.5 3.5v2z"/><path fill="#C5221F" d="M22.5 5.5l-5.5 5V4l2.2-1.8a1.5 1.5 0 0 1 3.3 1.3v2z"/></svg>
+                  </span>
+                  <span>Gmail</span>
+                </div>
+              </div>
+
+              <!-- LinkedIn Chip -->
+              <div data-stack-chip="true" data-href="https://www.linkedin.com/in/khudhur-saeed" role="link" tabindex="0" aria-label="Open LinkedIn profile" class="physics-chip will-change-transform" style="transform: translate3d(110px, 180px, 0px) rotate(-0.08rad);">
+                <div class="chip-inner" style="background-color: #0A66C2; color: #ffffff;">
+                  <span class="chip-icon-box" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  </span>
+                  <span>LinkedIn</span>
+                </div>
+              </div>
+
+              <!-- Instagram Chip -->
+              <div data-stack-chip="true" data-href="https://www.instagram.com/khedr.mo/" role="link" tabindex="0" aria-label="Open Instagram profile" class="physics-chip will-change-transform" style="transform: translate3d(290px, 170px, 0px) rotate(0.18rad);">
+                <div class="chip-inner" style="background: linear-gradient(45deg, #f09433 0%, #dc2743 50%, #bc1888 100%); color: #ffffff;">
+                  <span class="chip-icon-box" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#E4405F" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  </span>
+                  <span>Instagram</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Information & Action -->
+        <div class="contact-left-col">
+          <div class="contact-badge-wrap">
+            <span class="status-indicator-dot"></span>
+            <span class="status-text">Available for new opportunities</span>
+          </div>
+
+          <h2 class="contact-headline">Get in touch</h2>
+
+          <p class="contact-lead">
+            Targeting roles in Software Engineering, Application Security, and DevSecOps. Have a project in mind or interested in collaborating on secure backend architectures, threat analysis, or AI systems? Let’s build something impactful together.
+          </p>
+
+          <div class="contact-actions-row">
+            <!-- Download CV Button -->
+            <a href="assets/Khudhur_Saeed.pdf" download="Khudhur_Saeed.pdf" class="btn-cv-download" id="downloadCvBtn" aria-label="Download My CV">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download My CV</span>
+            </a>
+
+            <!-- Direct Email Link -->
+            <a href="mailto:khedrmosaid@gmail.com" class="btn-email-link" aria-label="Send direct email to khedrmosaid@gmail.com">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span>khedrmosaid@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    </div><!-- /post-hero-wrapper -->
+
+  </main>
+
+  <!-- =========================================================================
+       Footer Section
+       ========================================================================= -->
+  <footer class="footer">
+    <aside class="footer-brand">
+      <svg
+        width="36"
+        height="36"
+        viewBox="0 0 2170 2464"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true">
+        <path
+          d="M1710.82 849.379C1717.46 874.795 1721 901.467 1721 928.964V1170.69L738.732 1654.16C704.716 1670.9 692.772 1710.94 712.054 1743.58C731.336 1776.22 774.542 1789.12 808.559 1772.37L1721 1323.28V1660.15C1721 1833.56 1580.42 1974.15 1407 1974.15H763C589.583 1974.15 449 1833.56 449 1660.15V1470.44L1710.82 849.379ZM1407 614.964C1503.83 614.964 1590.43 658.797 1648.03 727.704L449 1317.86V928.964C449 755.547 589.583 614.964 763 614.964H1407ZM1048.2 204.963C1068.59 186.346 1101.66 186.346 1122.05 204.963L1245.73 317.86C1266.12 336.477 1266.12 366.662 1245.73 385.279L1122.05 498.177C1101.66 516.794 1068.59 516.794 1048.2 498.177L924.517 385.279C904.122 366.662 904.122 336.477 924.517 317.86L1048.2 204.963Z"></path>
+      </svg>
+      <p>Copyright &copy; <span id="footerYear">2026</span> - All rights reserved &bull; developed by <a href="https://github.com/khudhur-saeed" target="_blank" rel="noopener noreferrer" class="developed-by-link">khedr mohammed</a></p>
+    </aside>
+    <nav class="footer-social" aria-label="Social Media Links">
+      <a href="https://x.com/KhedrMo93973" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+        <svg
+          aria-label="X"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          class="fill-current">
+          <path
+            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+        </svg>
+      </a>
+      <a href="https://github.com/khudhur-saeed" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg
+          aria-label="GitHub"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          class="fill-current">
+          <path
+            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/khudhur-saeed" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg
+          aria-label="LinkedIn"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          class="fill-current">
+          <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/khedr.mo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg
+          aria-label="Instagram"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          class="fill-current">
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+        </svg>
+      </a>
+    </nav>
+  </footer>
+
+  <!-- Core Libraries (Local for zero network failures & offline reliability) -->
+  <script src="assets/matter.min.js"></script>
+
+  <!-- Pixel Arc WebGL Component (Originkit) -->
+  <script src="pixel-arc.js?v=1.7"></script>
+
+  <!-- Application Logic & Scroll Progress Bar -->
+  <script src="script.js?v=3.4"></script>
+  <script src="scroll-effects.js?v=2.5"></script>
+</body>
+</html>
